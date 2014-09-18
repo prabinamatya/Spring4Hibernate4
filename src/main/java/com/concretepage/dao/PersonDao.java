@@ -1,16 +1,19 @@
 package com.concretepage.dao;
 
+import javax.inject.Inject;
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.HibernateTemplate;
+import org.springframework.stereotype.Component;
 
 import com.concretepage.entity.Person;
 
 @Transactional
+@Component
 public class PersonDao implements IPersonDao {
-	@Autowired
+	@Inject
 	private HibernateTemplate  hibernateTemplate;
+	
 	public void savePerson() {
 		Person person = new Person();
 //		person.setId(1);
